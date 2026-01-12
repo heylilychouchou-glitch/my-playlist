@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #fafafa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Glass Popup Overlay */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.05);
+    width: 80%;
+    max-width: 300px;
+}
+
+.popup button {
+    background: #8da9c4;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Main Player UI */
+.main-content {
+    margin-top: 40px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.playlist-header h1 {
+    color: #8da9c4;
+    font-size: 2.5rem;
+    margin-bottom: 0;
+}
+
+.playlist-header p {
+    color: #b0b0b0;
+    margin-bottom: 30px;
+}
+
+.glass-player {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 30px;
+    border: 1px solid white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.album-art-container img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.song-details h2 { color: #444; margin: 20px 0 5px; font-size: 1.2rem; }
+.song-details p { color: #888; margin-bottom: 20px; }
+
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #eee;
+    margin: 0 15px;
+    border-radius: 10px;
+}
+
+.progress-fill {
+    width: 45%;
+    height: 100%;
+    background: #8da9c4;
+    border-radius: 10px;
+}
+
+/* Buttons */
+.controls button {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #8da9c4;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+/* Code Visual at bottom */
+.code-visual {
+    margin-top: 40px;
+    background: #282c34;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    color: #abb2bf;
+    font-family: monospace;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    margin-bottom: 50px;
+}
