@@ -17,12 +17,8 @@ const prevBtn = document.getElementById('prev');
 const overlay = document.getElementById('overlay');
 const openBtn = document.getElementById('open-playlist');
 
-// Logic to close the popup
-openBtn.onclick = () => {
-    overlay.style.display = 'none';
-};
+openBtn.onclick = () => overlay.style.display = 'none';
 
-// Function to update the player content
 function update() {
     art.src = songs[index].art;
     title.innerText = songs[index].title;
