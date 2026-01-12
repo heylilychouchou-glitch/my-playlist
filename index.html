@@ -12,12 +12,25 @@
         <div class="popup">
             <h3>Someone sent you a playlist</h3>
             <p>Hey, it's for you. I hope you listen to it.</p>
-            <button id="open-playlist">Open Playlist</button>
+            <hr>
+            <p class="question">ready ka na ba maging reyna ng tondo?</p>
+            
+            <div class="checkbox-group">
+                <label class="container">asim mo
+                    <input type="checkbox" class="reyna-check">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">yes baby
+                    <input type="checkbox" class="reyna-check">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <button id="open-playlist" disabled>Open Playlist</button>
         </div>
     </div>
 
     <div class="main-content">
-        
         <img src="fluttershy.gif" class="fluttershy" alt="Fluttershy">
 
         <div class="playlist-header">
@@ -36,9 +49,9 @@
             </div>
 
             <div class="progress-container">
-                <span class="time">2:04</span>
+                <span id="current-time" class="time">0:00</span>
                 <div class="progress-bar"><div class="progress-fill"></div></div>
-                <span class="time">4:16</span>
+                <span id="duration" class="time">0:00</span>
             </div>
 
             <div class="controls">
@@ -46,15 +59,6 @@
                 <button id="play-pause">▶</button>
                 <button id="next">⏭</button>
             </div>
-        </div>
-
-        <div class="code-visual">
-            <pre><code>body {
-  display: flex;
-  justify-content: center;
-  background: #fff0f5;
-  transition: background 0.8s ease;
-}</code></pre>
         </div>
     </div>
 
