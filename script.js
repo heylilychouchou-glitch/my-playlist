@@ -17,7 +17,9 @@ const prevBtn = document.getElementById('prev');
 const overlay = document.getElementById('overlay');
 const openBtn = document.getElementById('open-playlist');
 
-openBtn.onclick = () => overlay.style.display = 'none';
+openBtn.onclick = () => {
+    overlay.style.display = 'none';
+};
 
 function update() {
     art.src = songs[index].art;
@@ -34,3 +36,5 @@ prevBtn.onclick = () => {
     index = (index - 1 + songs.length) % songs.length;
     update();
 };
+
+update();
