@@ -2,46 +2,55 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
     background: #fff0f5; 
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .main-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     width: 90%;
     max-width: 400px;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the GIF and Header */
 }
 
 .fluttershy {
     width: 120px;
-    margin-bottom: 10px;
     border-radius: 15px;
+    margin-bottom: 10px;
 }
 
 .playlist-header {
     text-align: center;
-    margin-bottom: 20px;
+    width: 100%;
 }
 
 .playlist-header h1 {
     color: #ff69b4;
     font-size: 1.5rem;
+    margin: 10px 0;
 }
 
 .glass-player {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(10px);
     border-radius: 30px;
     padding: 25px;
     width: 100%;
     box-sizing: border-box;
     border: 2px solid white;
-    text-align: center; /* This centers the song info */
+    /* FIX FOR CENTERING START */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    /* FIX FOR CENTERING END */
+}
+
+.album-art-container {
+    width: 100%;
 }
 
 .album-art-container img {
@@ -49,14 +58,66 @@ body {
     border-radius: 20px;
 }
 
-.song-details h2 { color: #db7093; margin: 15px 0 5px; }
-.song-details p { color: #aaa; margin-bottom: 20px; }
+.song-details {
+    width: 100%;
+    margin-top: 15px;
+}
 
-/* Popup & Checkboxes */
+.song-details h2 { 
+    color: #db7093; 
+    margin: 5px 0; 
+    font-size: 1.4rem;
+}
+
+.song-details p { 
+    color: #aaa; 
+    margin: 0 0 20px 0; 
+}
+
+.progress-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: #ffb6c1;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #ffe4e1;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.progress-fill {
+    width: 40%;
+    height: 100%;
+    background: #ffb6c1;
+    border-radius: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #ffb6c1;
+    cursor: pointer;
+}
+
+/* Popup/Checkbox Styling */
 .overlay {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(255, 182, 193, 0.6);
+    background: rgba(255, 182, 193, 0.7);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: center;
@@ -69,22 +130,159 @@ body {
     padding: 30px;
     border-radius: 25px;
     text-align: center;
-    width: 80%;
-    max-width: 300px;
+    width: 85%;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .question { font-weight: bold; color: #ff69b4; margin: 15px 0; }
-
-.checkbox-group { text-align: left; margin: 15px 0; display: inline-block; }
-
-.container { display: block; position: relative; padding-left: 30px; margin-bottom: 10px; cursor: pointer; color: #db7093; }
-
+.checkbox-group { text-align: left; margin-bottom: 20px; display: inline-block; }
+.container { display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; color: #db7093; font-size: 1.1rem; }
 .container input { position: absolute; opacity: 0; }
-
-.checkmark { position: absolute; top: 0; left: 0; height: 18px; width: 18px; background-color: #eee; border-radius: 4px; }
-
+.checkmark { position: absolute; top: 0; left: 0; height: 20px; width: 20px; background-color: #eee; border-radius: 5px; }
 .container input:checked ~ .checkmark { background-color: #ffb6c1; }
+button:disabled { background-color: #eee !important; color: #ccc; }
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #fff0f5; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
 
-button:disabled { background-color: #ddd !important; }
+.main-content {
+    width: 90%;
+    max-width: 400px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the GIF and Header */
+}
 
-.controls button { background: none; border: none; font-size: 2rem; color: #ffb6c1; margin: 0 10px; }
+.fluttershy {
+    width: 120px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.playlist-header {
+    text-align: center;
+    width: 100%;
+}
+
+.playlist-header h1 {
+    color: #ff69b4;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.glass-player {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 25px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid white;
+    /* FIX FOR CENTERING START */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    /* FIX FOR CENTERING END */
+}
+
+.album-art-container {
+    width: 100%;
+}
+
+.album-art-container img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.song-details {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.song-details h2 { 
+    color: #db7093; 
+    margin: 5px 0; 
+    font-size: 1.4rem;
+}
+
+.song-details p { 
+    color: #aaa; 
+    margin: 0 0 20px 0; 
+}
+
+.progress-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: #ffb6c1;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #ffe4e1;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.progress-fill {
+    width: 40%;
+    height: 100%;
+    background: #ffb6c1;
+    border-radius: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.controls button {
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: #ffb6c1;
+    cursor: pointer;
+}
+
+/* Popup/Checkbox Styling */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(255, 182, 193, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    text-align: center;
+    width: 85%;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.question { font-weight: bold; color: #ff69b4; margin: 15px 0; }
+.checkbox-group { text-align: left; margin-bottom: 20px; display: inline-block; }
+.container { display: block; position: relative; padding-left: 35px; margin-bottom: 12px; cursor: pointer; color: #db7093; font-size: 1.1rem; }
+.container input { position: absolute; opacity: 0; }
+.checkmark { position: absolute; top: 0; left: 0; height: 20px; width: 20px; background-color: #eee; border-radius: 5px; }
+.container input:checked ~ .checkmark { background-color: #ffb6c1; }
+button:disabled { background-color: #eee !important; color: #ccc; }
