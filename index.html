@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Playlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="overlay" class="overlay">
+        <div class="popup">
+            <h3>Someone sent you a playlist</h3>
+            <p>Hey, it's for you. I hope you listen to it.</p>
+            <button id="open-playlist">Open Playlist</button>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="playlist-header">
+            <h1>Playlist</h1>
+            <p>songs that remind me of you</p>
+        </div>
+        <div class="glass-player">
+            <div class="album-art-container">
+                <img id="album-art" src="urs.jpg" alt="Album Art">
+            </div>
+            <div class="song-details">
+                <h2 id="song-title">urs</h2>
+                <p id="artist-name">NIKI</p>
+            </div>
+            <div class="progress-container">
+                <span class="time">2:04</span>
+                <div class="progress-bar"><div class="progress-fill"></div></div>
+                <span class="time">4:16</span>
+            </div>
+            <div class="controls">
+                <button id="prev">⏮</button>
+                <button id="play-pause">▶</button>
+                <button id="next">⏭</button>
+            </div>
+        </div>
+        <div class="code-visual">
+            <pre><code>body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fafafa;
+  transition: background 0.8s ease;
+}</code></pre>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
